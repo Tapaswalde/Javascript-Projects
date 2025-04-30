@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Random Background changer</h1>
+    <p style="text-align: center; font-size: 1.5rem;">Hex code : <span id="hex_code"></span></p>
+    <div style="text-align: center;">
+        <button style="background-color: yellow;" id="click">Background Changer</button>
+    </div>
+    <script>
+        const darkColorsArr = [
+  "#2C3E50",
+  "#34495E",
+  "#2C2C2C",
+  "#616A6B",
+  "#4A235A",
+  "#2F4F4F",
+  "#0E4B5A",
+  "#36454F",
+  "#2C3E50",
+  "#800020",
+];
+    function random_Color(){
+        return Math.floor(darkColorsArr.length * Math.random())
+    }
+    let colored=document.querySelector('body');
+    let hex_codes=document.querySelector('#hex_code');
+    function color_changer(){
+        let color=darkColorsArr[random_Color()];
+        hex_codes.innerHTML=color;
+        colored.style.backgroundColor=color;
+    }
+    let btn=document.querySelector('#click');
+    btn.onclick=color_changer ;
+    </script>
+</body>
+</html>
